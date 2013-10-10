@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "uaeds"
   spec.version       = Uaeds::VERSION
   spec.authors       = ["dgsan"]
-  spec.email         = ["dgsan@server.fake"]
+  spec.email         = ["dgsan@gmx.com"]
   spec.description   = "Tool for working with UA's 'Enterprise Directory Service,' an XML-based (DSML) (or JSON-based) lookup service."
   spec.summary       = 'Tool for working with UA EDS'
   spec.homepage      = "https://github.com/dgsan/uaeds"
