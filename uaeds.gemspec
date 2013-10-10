@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Uaeds::VERSION
   spec.authors       = ["dgsan"]
   spec.email         = ["dgsan@server.fake"]
-  spec.description   = "Tool for working with University of Arizona's 'Enterprise Directory Service,' and XML-based (DSML) lookup service."
+  spec.description   = "Tool for working with UA's 'Enterprise Directory Service,' an XML-based (DSML) (or JSON-based) lookup service."
   spec.summary       = 'Tool for working with UA EDS'
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/dgsan/uaeds"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
