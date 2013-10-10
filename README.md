@@ -46,6 +46,7 @@ If you feel lazy, it should work if you create a file `test_creds.in` formatted 
 ```
 and run `bundle exec rspec spec < test_creds.in`, though you might get some `stty: standard input: Inappropriate ioctl for device` messages.
 
+The tests themselves are currently ugly - not a whole lot of experience with rspec yet.
 
 ## Installation
 
