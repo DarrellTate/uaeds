@@ -15,7 +15,10 @@ You have a choice between `EdsDSML` and `EdsJSON`. The difference is that DSML r
 
 Either way, you need to provide an endpoint, EDS user, and access key for library to use.
 ```ruby
-eds = EdsDSML.new("https://<endpoint>", <user>, <key>)
+EdsDSML.eds_user = <user>
+EdsDSML.eds_key = <key>
+EdsDSML.eds_endpoint = "https://<endpoint>"
+eds = EdsDSML.instance
 person = eds.person_by_netid(<netid>)
 person.uaid
 person.uid
