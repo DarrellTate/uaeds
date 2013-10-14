@@ -1,3 +1,4 @@
+require 'uaeds/eds'
 require 'uaeds/eds_dsml'
 require 'uaeds/eds_json'
 require 'highline/import'
@@ -74,13 +75,18 @@ module Uaeds
         expect(eds_json_ep).not_to be_empty
       end
       
+      Eds.eds_user = eds_user
+      Eds.eds_key = eds_key
+      EdsDSML.eds_endpoint = "https://#{eds_dsml_ep}"
+      EdsJSON.eds_endpoint = "https://#{eds_json_ep}"
+      
     end
         
         
     describe 'EdsDSML and EdsJSON retrieve the same results' do
     
-      eds0 = EdsDSML.new("https://#{eds_dsml_ep}", eds_user, eds_key)
-      eds1 = EdsJSON.new("https://#{eds_json_ep}", eds_user, eds_key)
+      eds0 = EdsDSML.instance
+      eds1 = EdsJSON.instance
       
       describe 'EdsDSML and EdsJSON should match when retrieved by NetId' do
         

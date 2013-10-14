@@ -3,11 +3,14 @@ require 'open-uri'
 require 'json'
 require 'uaeds/eds'
 require 'uaeds/json_person'
-
+require 'singleton'
 
 module Uaeds
   class EdsJSON < Eds
-  
+    include Singleton
+    
+    @@eds_json_endpoint = nil
+    
     def person_by_uaid(uaid)
       return open_person('uaId', uaid)
     end
@@ -23,7 +26,15 @@ module Uaeds
     def person(identifier)
       return open_person(nil, identifier)
     end
-  
+    
+    def self.eds_endpoint=(endpoint=nil)
+      @@eds_json_endpoint = endpoint
+    end
+    
+    def self.eds_endpoint
+      @@eds_json_endpoint
+    end
+    
     private
     
     def open_person(attribute=nil, value)

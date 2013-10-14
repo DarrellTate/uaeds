@@ -3,9 +3,21 @@ require 'open-uri'
 require 'nokogiri'
 require 'uaeds/eds'
 require 'uaeds/dsml_person'
+require 'singleton'
 
 module Uaeds
   class EdsDSML < Eds
+    include Singleton
+    
+    @@eds_dsml_endpoint = nil
+    
+    def self.eds_endpoint=(endpoint=nil)
+      @@eds_dsml_endpoint = endpoint
+    end
+    
+    def self.eds_endpoint
+      @@eds_dsml_endpoint
+    end
     
     private
     
