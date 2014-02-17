@@ -10,7 +10,9 @@ module Uaeds
     
     def get_value(prop_name)
       data = get_xml_attr(prop_name)
-      if data.length == 0
+      if data.is_a? String
+        return data
+      elsif data.length == 0
         return nil
       elsif data.length == 1
         return data[0].content

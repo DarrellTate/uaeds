@@ -52,6 +52,18 @@ module Uaeds
       lookup_value(:emplId)
     end
     
+    def surname
+      lookup_value(:sn)
+    end
+
+    def given_name
+      lookup_value(:givenName)
+    end
+
+    def first_name
+      given_name
+    end
+
     def name
       cn
     end
@@ -62,6 +74,14 @@ module Uaeds
     
     def cn
       lookup_value(:cn)
+    end
+    
+    def email
+      mail
+    end
+    
+    def mail
+      lookup_value(:mail)
     end
     
     def person_type
