@@ -1,5 +1,3 @@
-require "uaeds/version"
-
 module Uaeds
   class DSML
     def initialize(xml=nil)
@@ -7,7 +5,7 @@ module Uaeds
       @xml = xml
       @value_h = {}
     end
-    
+
     def get_value(prop_name)
       data = get_xml_attr(prop_name)
       if data.is_a? String
@@ -22,7 +20,7 @@ module Uaeds
         return values
       end
     end
-    
+
     def get_values(prop_name)
       data = get_xml_attr(prop_name)
       if data.length == 0
@@ -33,7 +31,7 @@ module Uaeds
         return values
       end
     end
-    
+
     def lookup_value(kv)
       if(@value_h.key? kv)
         return @value_h[kv]
@@ -47,9 +45,9 @@ module Uaeds
         @value_h[kv]
       end
     end
-    
+
     private
-    
+
     def get_xml_attr(prop_name)
       @xml.xpath("//dsml:attr[@name='#{prop_name}']/dsml:value")
     end

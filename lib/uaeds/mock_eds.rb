@@ -1,9 +1,3 @@
-require 'date'
-require 'uaeds/eds'
-require 'uaeds/eds_dsml'
-require 'uaeds/dsml'
-require 'uaeds/dsml_person'
-
 # Provided to ease testing of applications using DSML
 module Uaeds
   class MockEdsDSML < EdsDSML
@@ -15,7 +9,7 @@ module Uaeds
 
     def self.eds_endpoint=(endpoint=nil)
     end
-    
+
     def self.eds_endpoint
     end
 
@@ -46,7 +40,7 @@ module Uaeds
         :employeePrimaryDeptName => @mock_overrides[:employeePrimaryDeptName] || "Robot Wing"
       }
     end
-    
+
   end
 
   class MockDSMLPerson < DSMLPerson
@@ -62,4 +56,3 @@ module Uaeds
   end
 
 end
-
