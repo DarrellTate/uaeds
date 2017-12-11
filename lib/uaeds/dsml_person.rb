@@ -48,11 +48,21 @@ module Uaeds
     end
 
     def surname
-      lookup_value(:sn)
+      preferred_name = lookup_value(:preferredSn)
+      if preferred_name
+        preferred_name
+      else
+        lookup_value(:sn)
+      end
     end
 
     def given_name
-      lookup_value(:givenName)
+      preferred_name = lookup_value(:preferredGivenname)
+      if preferred_name
+        preferred_name
+      else
+        lookup_value(:givenName)
+      end
     end
 
     def first_name
